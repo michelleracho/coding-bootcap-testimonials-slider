@@ -1,38 +1,59 @@
 .container {
   // border: 2px solid tomato;
   width: 100%;
+  max-width: 375px;
   min-height: 50rem;
   position: relative;
 
-  @media only screen and (max-width: $bp-lg) {
-    // background-color: skyblue;
-    max-width: 100rem;
+  @media only screen and (min-width: $bp-sm) {
+    // background-color: tomato;
+    // max-width: 50rem;
   }
 
-  @media only screen and (max-width: $bp-sm) {
-    // background-color: tomato;
+  @media only screen and (min-width: $bp-md) {
+    max-width: 75rem;
+  }
+
+  @media only screen and (min-width: $bp-lg) {
+    // background-color: skyblue;
+    // max-width: 100rem;
   }
 }
 
 .testimonial {
+  // border: 1px solid blue;
   width: 100%;
+  min-width: 375px;
+  min-height: 40rem;
   // width: 50rem;
   // min-width: 370px;
   padding: 5rem;
+  box-shadow: 0 1rem 3rem -1.5rem rgba($color-dark-blue, 0.5);
 
   @include flexCenter;
+  flex-direction: column;
 
   background: url(../images/pattern-curve.svg);
   background-size: 100%;
   background-repeat: no-repeat;
-  background-position: bottom right;
+  background-position: bottom center;
 
-  @media only screen and (max-width: $bp-sm) {
-    flex-direction: column;
+  @media only screen and (min-width: $bp-sm) {
+    // width: 375px;
+  }
+
+  @media only screen and (min-width: $bp-md) {
+    // flex-direction: row-reverse;
+    background-size: 45%;
+    background-position: bottom left;
+  }
+
+  @media only screen and (min-width: $bp-lg) {
+    // flex-direction: row-reverse;
   }
 
   &__photo-container {
-    // border: 1px solid blue;
+    // border: 1px solid yellow;
     padding: 3.5rem;
     position: relative;
 
@@ -40,13 +61,30 @@
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+    // width: 50%;
+
+    @media only screen and (min-width: $bp-md) {
+      position: absolute;
+      width: 50%;
+      right: 0;
+      transform: translateX(-10%);
+      // height: 100%;
+      // background-position: right;
+    }
   }
 
   &__photo {
+    // border: 1px solid red;
     display: block;
     width: 100%;
     height: auto;
     box-shadow: 0 2rem 3rem -1.5rem rgba($color-dark-blue, 0.5);
+
+    @media only screen and (min-width: $bp-md) {
+      width: 90%;
+      position: relative;
+      // right: 0;
+    }
   }
 
   .nav {
@@ -54,13 +92,19 @@
     border-radius: 5rem;
     background-color: #fff;
     // box-shadow: 0 0.5rem 1rem 0.15rem rgba(0, 0, 0, 0.25);
-    box-shadow: 0 0.7rem 1.5rem 0.05rem rgba(32, 32, 70, 0.3);
+    box-shadow: 0 0.5rem 1.5rem 0.05rem rgba(32, 32, 70, 0.3);
     @include flexCenter;
 
     position: absolute;
     bottom: 2rem;
     left: 50%;
     transform: translateX(-50%);
+
+    @media only screen and (min-width: $bp-md) {
+      left: 15%;
+      transform: translateX(0);
+      box-shadow: 0 0.5rem 1.5rem 0.05rem rgba(32, 32, 70, 0.1);
+    }
 
     &__btn {
       @include flexCenter;
@@ -90,11 +134,23 @@
 }
 
 .testimonial-msg {
+  // border: 1px solid red;
   @include flexCenter;
   flex-direction: column;
+
   margin-top: 4rem;
   margin-bottom: 5.5rem;
   position: relative;
+
+  @media only screen and (min-width: $bp-md) {
+    align-items: flex-start;
+    width: 40%;
+    position: absolute;
+    left: 0;
+    transform: translateX(35%);
+    margin-top: auto;
+    margin-bottom: auto;
+  }
 
   &::before {
     content: '';
@@ -106,21 +162,34 @@
     background-repeat: no-repeat;
     background-position: center top;
     top: -12%;
+
+    @media only screen and (min-width: $bp-md) {
+      background-position: left top;
+      top: -20%;
+      left: 15%;
+    }
   }
 
-  &__text {
-    font-size: 1.5rem;
-    text-align: center;
-  }
-
+  &__text,
   &__author {
     font-size: 1.5rem;
     text-align: center;
+
+    @media only screen and (min-width: $bp-md) {
+      text-align: left;
+    }
+  }
+
+  &__author {
     margin-top: 2rem;
 
     span {
       display: block;
       color: $color-grayish-blue;
+
+      @media only screen and (min-width: $bp-md) {
+        display: inline;
+      }
     }
   }
 }

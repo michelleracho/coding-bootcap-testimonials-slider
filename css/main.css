@@ -3,12 +3,14 @@
 *::after {
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
 }
 
 html {
   font-size: 62.5%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 body {
@@ -38,19 +40,24 @@ body {
 
 .container {
   width: 100%;
+  max-width: 375px;
   min-height: 50rem;
   position: relative;
 }
 
-@media only screen and (max-width: 1440px) {
+@media only screen and (min-width: 600px) {
   .container {
-    max-width: 100rem;
+    max-width: 75rem;
   }
 }
 
 .testimonial {
   width: 100%;
+  min-width: 375px;
+  min-height: 40rem;
   padding: 5rem;
+  -webkit-box-shadow: 0 1rem 3rem -1.5rem rgba(32, 32, 70, 0.5);
+          box-shadow: 0 1rem 3rem -1.5rem rgba(32, 32, 70, 0.5);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -60,18 +67,20 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   background: url(../images/pattern-curve.svg);
   background-size: 100%;
   background-repeat: no-repeat;
-  background-position: bottom right;
+  background-position: bottom center;
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (min-width: 600px) {
   .testimonial {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    background-size: 45%;
+    background-position: bottom left;
   }
 }
 
@@ -84,6 +93,16 @@ body {
   background-position: center;
 }
 
+@media only screen and (min-width: 600px) {
+  .testimonial__photo-container {
+    position: absolute;
+    width: 50%;
+    right: 0;
+    -webkit-transform: translateX(-10%);
+            transform: translateX(-10%);
+  }
+}
+
 .testimonial__photo {
   display: block;
   width: 100%;
@@ -92,11 +111,18 @@ body {
           box-shadow: 0 2rem 3rem -1.5rem rgba(32, 32, 70, 0.5);
 }
 
+@media only screen and (min-width: 600px) {
+  .testimonial__photo {
+    width: 90%;
+    position: relative;
+  }
+}
+
 .testimonial .nav {
   border-radius: 5rem;
   background-color: #fff;
-  -webkit-box-shadow: 0 0.7rem 1.5rem 0.05rem rgba(32, 32, 70, 0.3);
-          box-shadow: 0 0.7rem 1.5rem 0.05rem rgba(32, 32, 70, 0.3);
+  -webkit-box-shadow: 0 0.5rem 1.5rem 0.05rem rgba(32, 32, 70, 0.3);
+          box-shadow: 0 0.5rem 1.5rem 0.05rem rgba(32, 32, 70, 0.3);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -111,6 +137,16 @@ body {
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
+}
+
+@media only screen and (min-width: 600px) {
+  .testimonial .nav {
+    left: 15%;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    -webkit-box-shadow: 0 0.5rem 1.5rem 0.05rem rgba(32, 32, 70, 0.1);
+            box-shadow: 0 0.5rem 1.5rem 0.05rem rgba(32, 32, 70, 0.1);
+  }
 }
 
 .testimonial .nav__btn {
@@ -163,6 +199,21 @@ body {
   position: relative;
 }
 
+@media only screen and (min-width: 600px) {
+  .testimonial-msg {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    width: 40%;
+    position: absolute;
+    left: 0;
+    -webkit-transform: translateX(35%);
+            transform: translateX(35%);
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+}
+
 .testimonial-msg::before {
   content: '';
   position: absolute;
@@ -175,20 +226,38 @@ body {
   top: -12%;
 }
 
-.testimonial-msg__text {
+@media only screen and (min-width: 600px) {
+  .testimonial-msg::before {
+    background-position: left top;
+    top: -20%;
+    left: 15%;
+  }
+}
+
+.testimonial-msg__text, .testimonial-msg__author {
   font-size: 1.5rem;
   text-align: center;
 }
 
+@media only screen and (min-width: 600px) {
+  .testimonial-msg__text, .testimonial-msg__author {
+    text-align: left;
+  }
+}
+
 .testimonial-msg__author {
-  font-size: 1.5rem;
-  text-align: center;
   margin-top: 2rem;
 }
 
 .testimonial-msg__author span {
   display: block;
   color: #babacf;
+}
+
+@media only screen and (min-width: 600px) {
+  .testimonial-msg__author span {
+    display: inline;
+  }
 }
 
 .attribution {
