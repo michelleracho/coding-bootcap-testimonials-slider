@@ -1,4 +1,8 @@
-@import 'variables';
-@import 'mixins';
+@import './utilities/variables';
+@import './utilities/mixins';
+
 @import 'base';
-@import 'components';
+@import 'layout';
+
+@import './components/testimonials';
+@import './components/nav';

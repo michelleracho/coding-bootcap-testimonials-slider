@@ -1,0 +1,50 @@
+.nav {
+  border-radius: 5rem;
+  background-color: #fff;
+  box-shadow: 0 0.5rem 1.5rem 0.05rem rgba(32, 32, 70, 0.3);
+  @include flexCenter;
+
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+
+  @media only screen and (min-width: $bp-md) {
+    left: 17%;
+    transform: translateX(0);
+    box-shadow: 0 0.5rem 1.5rem 0.05rem rgba(32, 32, 70, 0.1);
+  }
+
+  &__btn {
+    @include flexCenter;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    margin: 0.8rem 0.9rem;
+    width: 1.2rem;
+    height: 1.2rem;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:active {
+      transform: scale(0.8);
+    }
+
+    &--prev {
+      background: url(../images/icon-prev.svg);
+    }
+
+    &--next {
+      background: url(../images/icon-next.svg);
+    }
+
+    &--prev,
+    &--next {
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+}
