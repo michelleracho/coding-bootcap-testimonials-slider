@@ -251,7 +251,7 @@ body {
       -ms-flex-align: center;
           align-items: center;
   position: absolute;
-  bottom: 2rem;
+  bottom: 53%;
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
@@ -259,7 +259,8 @@ body {
 
 @media only screen and (min-width: 600px) {
   .nav {
-    left: 17%;
+    bottom: 33.5%;
+    left: 52%;
     -webkit-transform: translateX(0);
             transform: translateX(0);
     -webkit-box-shadow: 0 0.5rem 1.5rem 0.05rem rgba(32, 32, 70, 0.1);
